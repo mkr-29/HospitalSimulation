@@ -40,11 +40,7 @@ SimPy is a process-based discrete-event simulation framework that is written in 
 
 To use SimPy, you need to install it on your computer. You can install SimPy using pip, the Python package manager, by running the following command in your terminal or command prompt:
 
-border around "pip install simpy"
-    
-    ```
     pip install simpy
-    ```
 
 
 Once you have installed SimPy, you can create a simulation by defining the processes and resources involved, specifying their behavior, and running the simulation using the SimPy environment.
