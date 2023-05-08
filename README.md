@@ -1,4 +1,4 @@
-### HospitalSimulation
+# HospitalSimulation
 Project Title: Hospital Simulation using SimPy
 
 Project Overview:

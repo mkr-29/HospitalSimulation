@@ -44,19 +44,17 @@ class Hospital:
             yield self.env.timeout(discharge_time)
             print(f"Patient {patient_id} discharged at time {self.env.now:.2f}")
 
-    # Define 
+# Initialize the simulation environment and the hospital
+env = simpy.Environment()
+num_beds = 10
+num_doctors = 3
+num_nurses = 5
+hospital = Hospital(env, num_beds, num_doctors, num_nurses)
 
-# # Initialize the simulation environment and the hospital
-# env = simpy.Environment()
-# num_beds = 10
-# num_doctors = 3
-# num_nurses = 5
-# hospital = Hospital(env, num_beds, num_doctors, num_nurses)
+# Start the patient arrival process
+arrival_rate = 0.5 # patients per minute
+triage = [1, 2, 3, 4] # triage priorities
+env.process(hospital.patient_arrival(arrival_rate, triage))
 
-# # Start the patient arrival process
-# arrival_rate = 0.5 # patients per minute
-# triage = [1, 2, 3, 4] # triage priorities
-# env.process(hospital.patient_arrival(arrival_rate, triage))
-
-# # Run the simulation for 10 minutes
-# env.run(until=10)
+# Run the simulation for 20 minutes
+env.run(until=20)
